@@ -1,5 +1,4 @@
 FROM php:5.6-fpm
-DESCRIPTION
 RUN apt-get update && apt-get install -y \
     libz-dev \
     libmemcached-dev \
