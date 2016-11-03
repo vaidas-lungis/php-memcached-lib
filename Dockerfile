@@ -5,10 +5,7 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev\
     && pecl install memcached \
     && docker-php-ext-enable memcached \
-    && curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/2.2.8.tar.gz \
-    && tar xfz /tmp/redis.tar.gz \
-    && rm -r /tmp/redis.tar.gz \
-    && mv phpredis-2.2.8 /usr/src/php/ext/redis \
-    && docker-php-ext-install redis
+    && pecl install redis-2.2.8 \
+    && docker-php-ext-enable redis
 
 RUN docker-php-ext-install pdo pdo_mysql mbstring bcmath mcrypt
