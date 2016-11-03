@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y \
     libmemcached-dev \
     libmcrypt-dev\
     && pecl install memcached \
-    && docker-php-ext-enable memcached
+    && docker-php-ext-enable memcached \
     && curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/3.2.5.tar.gz \
     && tar xfz /tmp/redis.tar.gz \
     && rm -r /tmp/redis.tar.gz \
